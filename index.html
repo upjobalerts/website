@@ -77,6 +77,12 @@
       async=""
     ></script>
 
+    <script 
+    src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+    custom-element="amp-analytics" 
+    async
+    ></script>
+
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700"
       rel="stylesheet"
@@ -3378,6 +3384,18 @@
         </a>
       </div>
     </header>
+    <amp-analytics type="gtag" data-credentials="include">
+      <script type="application/json">
+      {
+        "vars" : {
+          "gtag_id": "<TARGET_ID>",
+          "config" : {
+            "G-3Q430RE03N": { "groups": "default" }
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
 
     <!-- Start Sidebar -->
     <amp-sidebar

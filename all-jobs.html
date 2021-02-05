@@ -93,11 +93,14 @@
       async=""
     ></script>
 
-    <link
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
+    <!-- <link
       href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700"
       rel="stylesheet"
-    />
-
+    /> -->
+    <link 
+    rel="preload" as="font" crossorigin="crossorigin" type="font/woff" href="https://www.microsoft.com/mwf/_h/v3.54/mwf.app/fonts/mwfmdl2-v3.54.woff2">
     <style amp-custom="">
       /*! Bassplate | MIT License | http://github.com/basscss/bassplate */
 
@@ -2529,7 +2532,7 @@
       h7 {
         line-height: normal;
         letter-spacing: normal;
-        font-family: Open Sans Condensed, sans-serif;
+        font-family: Segoe UI, sans-serif;
         text-transform: uppercase;
         font-weight: 700;
         color: #000;
@@ -2671,7 +2674,7 @@
       .ampstart-input label,
       textarea {
         font-size: 0.94rem;
-        font-family: Open Sans Condensed, sans-serif;
+        font-family: Segoe UI, sans-serif;
         color: #222;
         font-weight: 700;
         text-transform: uppercase;
@@ -2682,7 +2685,7 @@
       .ampstart-input label,
       textarea {
         font-size: 0.94rem;
-        font-family: Open Sans Condensed, sans-serif;
+        font-family: Segoe UI, sans-serif;
         color: #222;
         font-weight: 700;
         text-transform: uppercase;
@@ -2718,7 +2721,7 @@
         border-color: #222;
         display: inline-block;
         font-size: 0.8rem;
-        font-family: Open Sans Condensed, sans-serif;
+        font-family: Segoe UI, sans-serif;
         font-weight: 700;
         padding: 0.5rem 2rem;
         transition: background-color 0.2s ease-in, color 0.2s ease-in;
@@ -2773,7 +2776,7 @@
       }
       .commerce-pullquote-author,
       .commerce-table {
-        font-family: Open Sans Condensed, sans-serif;
+        font-family: Segoe UI, sans-serif;
         font-weight: 700;
       }
       .commerce-table {
@@ -2921,7 +2924,7 @@
         margin-bottom: 1rem;
       }
       .ampstart-nav-link {
-        font-family: Open Sans Condensed, sans-serif;
+        font-family: Segoe UI, sans-serif;
         font-size: 1.75rem;
         font-weight: 700;
         line-height: normal;
@@ -3261,7 +3264,7 @@
         border-radius: 50%;
         background-color: #f88;
         color: #fff;
-        font: 700 0.7rem Open Sans Condensed, sans-serif;
+        font: 700 0.7rem Segoe UI, sans-serif;
         opacity: 0;
         animation: c 0.5s forwards;
       }
@@ -3694,6 +3697,14 @@
           </amp-list>
         </div>
       </section>
+      <amp-ad width="300"
+        height="250"
+        type="a9"
+        data-amzn_assoc_ad_mode="auto"
+        data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+        data-recomtype="async"
+        data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+      </amp-ad>
     </main>
     <footer class="commerce-footer center">
       <nav class="mx-auto md-mb0 md-pt5 md-pb5">
