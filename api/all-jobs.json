@@ -1,0 +1,20 @@
+{
+	"items": [
+		{
+			"job_id": "1",
+            "name": "RBI Grade B",
+			"description": "Highest post in Banking sector by directly an exam",
+			"price": 867,
+			"image": "/img/e-commerce/product/product-3.jpg",
+			"category": "accessories"
+		},
+		{
+            "job_id": "2",
+			"name": "SSC MTS 2020 Vaccancy",
+			"description": "Annual Exam by SSC.",
+			"price": 476,
+			"image": "/img/e-commerce/product/product-4.jpg",
+			"category": "accessories"
+		}
+	]
+}
