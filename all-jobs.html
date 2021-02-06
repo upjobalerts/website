@@ -3319,6 +3319,10 @@
         .commerce-related-product-name {
         text-decoration: underline;
       }
+
+      .commerce-listing-product, .commerce-listing-product > div {
+          min-height: 1px;
+      }
     </style>
   </head>
   <body>
@@ -3677,7 +3681,7 @@
               >
                 <div class="flex flex-column justify-between">
                   <div>
-                    <amp-img
+                    <!-- <amp-img
                       class="commerce-listing-product-image mb2"
                       src="{{image}}"
                       width="340"
@@ -3686,11 +3690,13 @@
                       alt="{{ name }}"
                       noloading=""
                       ><div placeholder="" class="commerce-loader"></div
-                    ></amp-img>
+                    ></amp-img> -->
                     <h2 class="commerce-listing-product-name h6">{{ name }}</h2>
                     {{ description }}
                   </div>
-                  <div class="h6 mt1">&#163;{{ price }}</div>
+                  <!-- <div class="h6 mt1">&#163;{{ price }}</div> -->
+                  <div class="h6 mt1">{{ positions }}</div>
+                  
                 </div>
               </a>
             </template>
@@ -3705,6 +3711,17 @@
         data-recomtype="async"
         data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
       </amp-ad>
+
+      <amp-ad width="300"
+        height="250"
+        type="a9"
+        data-amzn_assoc_ad_mode="auto"
+        data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5h7ujhb"
+        data-recomtype="async"
+        data-adinstanceid="B082QJC6QZ&linkId=e8f4d3f2b00fd0ef33653525a4931dbe">
+      </amp-ad>
+
+
     </main>
     <footer class="commerce-footer center">
       <nav class="mx-auto md-mb0 md-pt5 md-pb5">
