@@ -3,10 +3,11 @@
 		{
 			"job_id": "1",
             "name": "RBI Grade B",
-			"description": "Highest post in Banking sector by directly an exam",
+			"description": "Highest post in Banking by direct exam",
 			"price": 867,
 			"image": "/img/e-commerce/product/product-3.jpg",
-			"category": "accessories"
+			"category": "accessories",
+			"positions" : "322 Posts"
 		},
 		{
             "job_id": "2",
@@ -14,7 +15,29 @@
 			"description": "Annual Exam by SSC.",
 			"price": 476,
 			"image": "/img/e-commerce/product/product-4.jpg",
-			"category": "accessories"
+			"category": "accessories",
+			"positions" : "98 Positions"
+		},
+		{
+            "job_id": "3",
+			"name": "HJS, Allahabad High Court",
+			"description": "Annual Exam by SSC.",
+			"price": "98 Positions",
+			"image": "/img/e-commerce/product/product-4.jpg",
+			"category": "accessories",
+			"positions" : "98 Posts"
+		},
+		{
+            "job_id": "4",
+			"name": "Indian Statistical Service (ISS)",
+			"description": "Annual Exam by UPSC.",
+			"price": "98 Positions",
+			"image": "/img/e-commerce/product/product-4.jpg",
+			"category": "accessories",
+			"positions" : "47 Posts"
 		}
+
+		
+
 	]
 }

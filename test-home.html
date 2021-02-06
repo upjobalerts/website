@@ -59,8 +59,6 @@
           visibility: visible;
         }
       }
-
-      
     </style>
     <noscript
       ><style amp-boilerplate="">
@@ -85,15 +83,17 @@
     async
     ></script>
     <script
-    custom-element="amp-list"
-    src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
-    async=""
-  ></script>
-  <script
-      custom-template="amp-mustache"
-      src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
+      custom-element="amp-list"
+      src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
       async=""
     ></script>
+    <script
+    custom-template="amp-mustache"
+    src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
+    async=""
+  ></script>
+
+
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700"
       rel="stylesheet"
@@ -3169,7 +3169,8 @@
       }
       .commerce-listing-product,
       .commerce-listing-product > div {
-        min-height: 275px;
+        /* min-height: 275px; */ 
+        min-height: 1px;
       }
       .commerce-listing-product-image {
         border-bottom: 1px dashed #dadada;
@@ -3317,9 +3318,6 @@
         .commerce-related-product-name {
         text-decoration: underline;
       }
-      .commerce-listing-product, .commerce-listing-product > div {
-          min-height: 1px;
-      }
     </style>
   </head>
   <body>
@@ -3381,7 +3379,7 @@
         class="ampstart-headerbar-fixed center m0 p0 flex justify-center nowrap absolute top-0 right-0 pt2 pr3"
       >
         <div class="mr2"></div>
-        <!-- <a
+        <a
           href="cart.amp.html"
           class="text-decoration-none mr2 ampstart-headerbar-fixed-link"
         >
@@ -3395,7 +3393,7 @@
               </g>
             </svg>
           </div>
-        </a> -->
+        </a>
       </div>
     </header>
     <amp-analytics type="gtag" data-credentials="include">
@@ -3432,17 +3430,8 @@
         <ul class="list-reset m0 p0 ampstart-label">
           <li>
             <a href="/" class="text-decoration-none block 22">
-              <!-- <amp-img
-                src="img/e-commerce/logo-nav.png"
-                width="279"
-                height="175"
-                layout="responsive"
-                class="ampstart-sidebar-nav-image inline-block mb4"
-                alt="Company logo"
-                noloading=""
-              > -->
               <amp-img
-                src="website-images/sidebar-logo.jpg"
+                src="img/e-commerce/logo-nav.png"
                 width="279"
                 height="175"
                 layout="responsive"
@@ -3459,11 +3448,11 @@
               >All Jobs</a
             >
           </li>
-          <!-- <li class="ampstart-nav-item">
+          <li class="ampstart-nav-item">
             <a class="ampstart-nav-link" href="product-listing.amp.html"
               >Products</a
             >
-          </li> -->
+          </li>
           <li class="ampstart-nav-item">
             <a class="ampstart-nav-link" href="daily-tests.html">Daily Tests</a>
           </li>
@@ -3473,9 +3462,6 @@
           <li class="ampstart-nav-item">
             <a class="ampstart-nav-link" href="blog-listing.amp.html">Blog</a>
           </li>
-          <!-- <li class="ampstart-nav-item">
-            <a class="ampstart-nav-link" href="test-home.html">Test Home</a>
-          </li> -->
           <!-- <li class="ampstart-nav-item">
             <a class="ampstart-nav-link" href="contact.amp.html">Contact us</a>
           </li> -->
@@ -3609,6 +3595,8 @@
           </div>
         </a>
       </section> -->
+
+      
       <section class="commerce-listing-content mx-auto flex flex-wrap pb4">
         
         <!-- <div class="col-3 xs-hide sm-hide flex flex-column">
@@ -3729,8 +3717,8 @@
           > -->
           <amp-list
             class="mx1 md-mxn1"
-            [src]="'https://upjobalerts.com/api/all-jobs.json'"
-            src="https://upjobalerts.com/api/all-jobs.json"
+            [src]="'/all-jobs.json'"
+            src="api/all-jobs.json"
             height="1000"
             width="300"
             layout="responsive"
@@ -3764,6 +3752,8 @@
           </amp-list>
         </div>
       </section>
+      
+
       <!-- <section class="commerce-hero-content-wrapper center overflow-hidden">
         <a href="blog-listing.amp.html" class="text-decoration-none block">
           <amp-img
@@ -3809,8 +3799,8 @@
             </div>
           </div>
         </a>
-      </section> -->
-      <!-- <section class="commerce-hero-content-wrapper center overflow-hidden">
+      </section>
+      <section class="commerce-hero-content-wrapper center overflow-hidden">
         <a href="product-listing.amp.html" class="text-decoration-none block">
           <amp-img
             class="commerce-hero-image"
@@ -3855,10 +3845,8 @@
             </div>
           </div>
         </a>
-      </section> -->
-      <!-- <section class="commerce-hero-content-wrapper center overflow-hidden">
-
-        
+      </section>
+      <section class="commerce-hero-content-wrapper center overflow-hidden">
         <a href="blog-listing.amp.html" class="text-decoration-none block">
           <amp-img
             class="commerce-hero-image"
@@ -3905,6 +3893,9 @@
         </a>
       </section> -->
     </main>
+
+
+
     <footer class="commerce-footer center">
       <nav class="mx-auto md-mb0 md-pt5 md-pb5">
         <ul class="list-reset flex flex-wrap my0 md-pl4 md-pr4 md-mxn4">

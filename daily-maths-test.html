@@ -1,11 +1,28 @@
 <!DOCTYPE html>
+
+<!---
+Copyright 2017 The AMP Start Authors. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS-IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
 <html ⚡="" lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Up Job Alerts</title>
+    <title>Commerce</title>
     <link
       rel="canonical"
-      href="https://www.ampstart.com/templates/e-commerce/landing.amp"
+      href="https://www.ampstart.com/templates/e-commerce/blog-listing.amp"
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="amp-google-client-id-api" content="googleanalytics" />
@@ -59,8 +76,6 @@
           visibility: visible;
         }
       }
-
-      
     </style>
     <noscript
       ><style amp-boilerplate="">
@@ -79,21 +94,6 @@
       async=""
     ></script>
 
-    <script 
-    src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
-    custom-element="amp-analytics" 
-    async
-    ></script>
-    <script
-    custom-element="amp-list"
-    src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
-    async=""
-  ></script>
-  <script
-      custom-template="amp-mustache"
-      src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
-      async=""
-    ></script>
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700"
       rel="stylesheet"
@@ -3317,9 +3317,6 @@
         .commerce-related-product-name {
         text-decoration: underline;
       }
-      .commerce-listing-product, .commerce-listing-product > div {
-          min-height: 1px;
-      }
     </style>
   </head>
   <body>
@@ -3352,15 +3349,14 @@
         href="/"
         class="text-decoration-none inline-block mx-auto ampstart-headerbar-home-link mb1 md-mb0"
       >
-        <!-- <amp-img
+        <amp-img
           src="img/e-commerce/logo.png"
           width="96"
           height="27"
           layout="fixed"
           class="my0 mx-auto"
           alt=""
-        ></amp-img> -->
-        <h4>Upjobalerts.com</h4>
+        ></amp-img>
       </a>
       <!--
       TODO: currently "fixeditems" is an array, therefore it's not possible to
@@ -3381,7 +3377,7 @@
         class="ampstart-headerbar-fixed center m0 p0 flex justify-center nowrap absolute top-0 right-0 pt2 pr3"
       >
         <div class="mr2"></div>
-        <!-- <a
+        <a
           href="cart.amp.html"
           class="text-decoration-none mr2 ampstart-headerbar-fixed-link"
         >
@@ -3395,21 +3391,9 @@
               </g>
             </svg>
           </div>
-        </a> -->
+        </a>
       </div>
     </header>
-    <amp-analytics type="gtag" data-credentials="include">
-      <script type="application/json">
-      {
-        "vars" : {
-          "gtag_id": "<TARGET_ID>",
-          "config" : {
-            "G-3Q430RE03N": { "groups": "default" }
-          }
-        }
-      }
-      </script>
-    </amp-analytics>
 
     <!-- Start Sidebar -->
     <amp-sidebar
@@ -3431,18 +3415,9 @@
       <nav class="ampstart-sidebar-nav ampstart-nav">
         <ul class="list-reset m0 p0 ampstart-label">
           <li>
-            <a href="/" class="text-decoration-none block 22">
-              <!-- <amp-img
-                src="img/e-commerce/logo-nav.png"
-                width="279"
-                height="175"
-                layout="responsive"
-                class="ampstart-sidebar-nav-image inline-block mb4"
-                alt="Company logo"
-                noloading=""
-              > -->
+            <a href="landing.amp.html" class="text-decoration-none block 22">
               <amp-img
-                src="website-images/sidebar-logo.jpg"
+                src="img/e-commerce/logo-nav.png"
                 width="279"
                 height="175"
                 layout="responsive"
@@ -3455,30 +3430,16 @@
             </a>
           </li>
           <li class="ampstart-nav-item">
-            <a class="ampstart-nav-link" href="all-jobs.html"
-              >All Jobs</a
-            >
-          </li>
-          <!-- <li class="ampstart-nav-item">
             <a class="ampstart-nav-link" href="product-listing.amp.html"
               >Products</a
             >
-          </li> -->
-          <li class="ampstart-nav-item">
-            <a class="ampstart-nav-link" href="daily-tests.html">Daily Tests</a>
-          </li>
-          <li class="ampstart-nav-item">
-            <a class="ampstart-nav-link" href="resources.html">Resources</a>
           </li>
           <li class="ampstart-nav-item">
             <a class="ampstart-nav-link" href="blog-listing.amp.html">Blog</a>
           </li>
-          <!-- <li class="ampstart-nav-item">
-            <a class="ampstart-nav-link" href="test-home.html">Test Home</a>
-          </li> -->
-          <!-- <li class="ampstart-nav-item">
+          <li class="ampstart-nav-item">
             <a class="ampstart-nav-link" href="contact.amp.html">Contact us</a>
-          </li> -->
+          </li>
         </ul>
       </nav>
 
@@ -3545,7 +3506,7 @@
         </li>
       </ul>
 
-      <!-- <ul class="ampstart-sidebar-faq list-reset m0">
+      <ul class="ampstart-sidebar-faq list-reset m0">
         <li class="ampstart-faq-item">
           <a href="#" class="text-decoration-none">Size Guide</a>
         </li>
@@ -3557,353 +3518,154 @@
             >Cookie &amp; privacy policy</a
           >
         </li>
-      </ul> -->
+      </ul>
     </amp-sidebar>
     <!-- End Sidebar -->
     <!-- End Navbar -->
 
-    <main id="content" role="main" class="main commerce-landing">
-      <!-- <section class="commerce-hero-content-wrapper center overflow-hidden">
-        <a href="product-listing.amp.html" class="text-decoration-none block">
-          <amp-img
-            class="commerce-hero-image"
-            src="img/e-commerce/narrow-landing-01.jpg"
-            width="750"
-            height="573"
-            layout="responsive"
-            media="(max-width: 52.06rem)"
-            alt="Hero Landing 1"
-            noloading=""
-          >
-            <div placeholder="" class="commerce-loader"></div>
-          </amp-img>
-          <amp-img
-            class="commerce-hero-image"
-            src="img/e-commerce/wide-landing-01.jpg"
-            width="2560"
-            height="800"
-            layout="responsive"
-            media="(min-width: 52.07rem)"
-            alt="Hero Landing 1"
-            noloading=""
-          >
-            <div placeholder="" class="commerce-loader"></div>
-          </amp-img>
-          <div
-            class="commerce-hero-content commerce-hero-content-theme-primary flex justify-center flex-column md-mx-auto md-p0"
-          >
-            <div class="commerce-hero-align md-mx-auto">
-              <h2
-                class="commerce-hero-content-title h4 md-h1 caps md-mb2 md-pl4"
-              >
-                The Essentials
-              </h2>
-              <p class="commerce-hero-content-body">
-                These are the key frames, clothing and accessories every rider
-                needs.
+    <main id="content" role="main" class="main md-flex flex-wrap items-start">
+      <section
+        class="commerce-blog-wrapper col-12 md-col-8 px2 pt2 pb3 md-px4 md-pt1 md-pb3"
+      >
+        <h1 class="xs-hide sm-hide md-commerce-header h3 md-py2 md-mb4">
+          Daily Tests
+        </h1>
+        <article>
+            <amp-img
+              class="mb3"
+              src="img/e-commerce/blog-narrow-01.png"
+              srcset="img/e-commerce/blog-narrow-01.png 750w,img/e-commerce/blog-wide-01.png 1280w"
+              width="750"
+              height="427"
+              layout="responsive"
+              alt="Typing Test Resources"
+              noloading=""
+            >
+              <div placeholder="" class="commerce-loader"></div>
+            </amp-img>
+            <div class="mb3 md-mx0">
+              <h2 class="h3">Typing Test Resources</h2>
+              <!-- <time datetime="2017-03-31T00:00" class="block mb2"
+                >31st March 2017</time
+              > -->
+              <p class="mb2">
+                Typing Test is of qualifying nature for many govt exams, so you must prepare well to crack it. Practice using the best tools to get through this.
               </p>
-              <div class="ampstart-btn ampstart-btn-secondary caps md-ml4">
-                shop
-              </div>
-            </div>
-          </div>
-        </a>
-      </section> -->
-      <section class="commerce-listing-content mx-auto flex flex-wrap pb4">
-        
-        <!-- <div class="col-3 xs-hide sm-hide flex flex-column">
-          <div class="commerce-side-panel pt4 pr4 self-center">
-            <h2 class="h5 mb2">Categories</h2> -->
-
-            <!-- Start Radio -->
-            <!-- <div
-              class="ampstart-input ampstart-input-radio inline-block relative m0 p0 mb3"
-              on="change: AMP.setState({products: {category: &#39;all&#39;}})"
-            >
-              <input
-                type="radio"
-                value=""
-                name="category"
-                id="all"
-                class="relative"
-                checked=""
-              />
-              <label for="all" class="" aria-hidden="true">All</label>
-            </div> -->
-            <!-- End Radio -->
-            <!-- Start Radio -->
-            <!-- <div
-              class="ampstart-input ampstart-input-radio inline-block relative m0 p0 mb3"
-              on="change: AMP.setState({products: {category: &#39;bikes&#39;}})"
-            >
-              <input
-                type="radio"
-                value=""
-                name="category"
-                id="bikes"
-                class="relative"
-              />
-              <label for="bikes" class="" aria-hidden="true">Bikes</label>
-            </div> -->
-            <!-- End Radio -->
-            <!-- Start Radio -->
-            <!-- <div
-              class="ampstart-input ampstart-input-radio inline-block relative m0 p0 mb3"
-              on="change: AMP.setState({products: {category: &#39;accessories&#39;}})"
-            >
-              <input
-                type="radio"
-                value=""
-                name="category"
-                id="accessories"
-                class="relative"
-              />
-              <label for="accessories" class="" aria-hidden="true"
-                >Accessories</label
-              >
-            </div> -->
-            <!-- End Radio -->
-            <!-- Start Radio -->
-            <!-- <div
-              class="ampstart-input ampstart-input-radio inline-block relative m0 p0 mb3"
-              on="change: AMP.setState({products: {category: &#39;components&#39;}})"
-            >
-              <input
-                type="radio"
-                value=""
-                name="category"
-                id="components"
-                class="relative"
-              />
-              <label for="components" class="" aria-hidden="true"
-                >Components</label
-              >
-            </div> -->
-            <!-- End Radio -->
-          <!-- </div>
-        </div> -->
-
-        <div class="col-12 md-col-12 pt2 pb3 md-px4 md-pt1 md-pb7">
-          <h2 class="h2 mb2">Latest Jobs</h2>
-          <hr />
-          <!-- <div class="md-commerce-header relative md-flex flex-wrap items-center md-mx0 md-mb2"> -->
-            <div class=" relative md-flex flex-wrap items-center md-mx0 md-mb2">
-            <!-- <h1 class="h3 mb2 md-mt2 md-mb2 md-ml0 flex-auto px2">Products</h1> -->
-            <div class="commerce-listing-filters pt2 pb2 mb3 md-mb0">
-              <!-- <div class="commerce-select-wrapper inline-block md-mr1 pl2 md-hide lg-hide">
-                <label for="categories" class="bold caps h6 md-h7">Show:</label>
-                <select
-                  name="categories"
-                  id="categories"
-                  class="commerce-select h6 md-h7"
-                  on="change: AMP.setState({products: {category: event.value}})"
-                >
-                  <option value="all">all</option>
-                  <option value="bikes">bikes</option>
-                  <option value="accessories">accessories</option>
-                  <option value="components">components</option>
-                </select>
-              </div> -->
-              <!-- <div class="commerce-select-wrapper inline-block">
-                <label for="price" class="bold caps h6 md-h7">Sort by:</label>
-                <select
-                  name="price"
-                  id="price"
-                  class="commerce-select h6 md-h7"
-                  on="change: AMP.setState({products: {filter: event.value}})"
-                >
-                  <option value="high-low">Price: High-Low</option>
-                  <option value="low-high">Price: Low-High</option>
-                </select>
-              </div> -->
-            </div>
-          </div>
-
-          <!-- <amp-list
-            class="mx1 md-mxn1"
-            [src]="'api/' + products.filter + '-' + products.category + '-products.json'"
-            src="api/high-low-all-products.json"
-            height="1000"
-            width="300"
-            layout="responsive"
-          > -->
-          <amp-list
-            class="mx1 md-mxn1"
-            [src]="'https://upjobalerts.com/api/all-jobs.json'"
-            src="https://upjobalerts.com/api/all-jobs.json"
-            height="1000"
-            width="300"
-            layout="responsive"
-          >
-            <template type="amp-mustache">
               <a
-                href="product-details.amp.html?job_id={{job_id}}"
-                target="_self"
-                class="commerce-listing-product text-decoration-none inline-block col-6 md-col-4 lg-col-3 px1 mb2 md-mb4 relative"
+                href="blog-article.amp.html"
+                class="commerce-blog-link inline-block h7 md-mb4"
+                >read more</a
               >
-                <div class="flex flex-column justify-between">
-                  <div>
-                    <!-- <amp-img
-                      class="commerce-listing-product-image mb2"
-                      src="{{image}}"
-                      width="680"
-                      height="680"
-                      layout="responsive"
-                      alt="{{ name }}"
-                      noloading=""
-                      ><div placeholder="" class="commerce-loader"></div
-                    ></amp-img> -->
-                    <h2 class="commerce-listing-product-name h6">{{ name }}</h2>
-                    {{ description }}
-                  </div>
-                  <!-- <div class="h6 mt1">&#163;{{ price }}</div> -->
-                  <div class="h6 mt1">{{ positions }}</div>
-                </div>
-              </a>
-            </template>
-          </amp-list>
-        </div>
-      </section>
-      <!-- <section class="commerce-hero-content-wrapper center overflow-hidden">
-        <a href="blog-listing.amp.html" class="text-decoration-none block">
-          <amp-img
-            class="commerce-hero-image"
-            src="img/e-commerce/narrow-landing-02.jpg"
-            width="750"
-            height="573"
-            layout="responsive"
-            media="(max-width: 52.06rem)"
-            alt="Hero Landing 1"
-            noloading=""
-          >
-            <div placeholder="" class="commerce-loader"></div>
-          </amp-img>
-          <amp-img
-            class="commerce-hero-image"
-            src="img/e-commerce/wide-landing-02.jpg"
-            width="2560"
-            height="800"
-            layout="responsive"
-            media="(min-width: 52.07rem)"
-            alt="Hero Landing 1"
-            noloading=""
-          >
-            <div placeholder="" class="commerce-loader"></div>
-          </amp-img>
-          <div
-            class="commerce-hero-content commerce-hero-content-theme-primary flex justify-center flex-column md-mx-auto md-p0"
-          >
-            <div class="commerce-hero-align md-mx-auto">
-              <h2
-                class="commerce-hero-content-title h4 md-h1 caps md-mb2 md-pl4"
-              >
-                Lost Highways
-              </h2>
-              <p class="commerce-hero-content-body">
-                Go the distance and discover new levels of endurance along the
-                way. Explore the world’s 10 toughest randonnées.
-              </p>
-              <div class="ampstart-btn ampstart-btn-secondary caps md-ml4">
-                read
-              </div>
             </div>
-          </div>
-        </a>
-      </section> -->
-      <!-- <section class="commerce-hero-content-wrapper center overflow-hidden">
-        <a href="product-listing.amp.html" class="text-decoration-none block">
+          </article>
+        <article>
           <amp-img
-            class="commerce-hero-image"
-            src="img/e-commerce/narrow-landing-03.jpg"
+            class="mb3"
+            src="img/e-commerce/blog-narrow-01.png"
+            srcset="img/e-commerce/blog-narrow-01.png 750w,img/e-commerce/blog-wide-01.png 1280w"
             width="750"
-            height="573"
+            height="427"
             layout="responsive"
-            media="(max-width: 52.06rem)"
-            alt="Hero Landing 1"
+            alt="No sleep &#39;til Brooklyn"
             noloading=""
           >
             <div placeholder="" class="commerce-loader"></div>
           </amp-img>
-          <amp-img
-            class="commerce-hero-image"
-            src="img/e-commerce/wide-landing-03.jpg"
-            width="2560"
-            height="800"
-            layout="responsive"
-            media="(min-width: 52.07rem)"
-            alt="Hero Landing 1"
-            noloading=""
-          >
-            <div placeholder="" class="commerce-loader"></div>
-          </amp-img>
-          <div
-            class="commerce-hero-content commerce-hero-content-theme-secondary flex justify-center flex-column md-mx-auto md-p0"
-          >
-            <div class="commerce-hero-align md-mx-auto">
-              <h2
-                class="commerce-hero-content-title h4 md-h1 caps md-mb2 md-pl4"
-              >
-                Sprocket Set 3 Series
-              </h2>
-              <p class="commerce-hero-content-body">
-                The steel-framed complete bike that combines peerless
-                performance with timeless style.
-              </p>
-              <div class="ampstart-btn ampstart-btn-secondary caps md-ml4">
-                shop
-              </div>
-            </div>
+          <div class="mb3 md-mx0">
+            <h2 class="h3">No sleep &#39;til Brooklyn</h2>
+            <time datetime="2017-03-31T00:00" class="block mb2"
+              >31st March 2017</time
+            >
+            <p class="mb2">
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur
+              et. Duis mollis, est non commodo luctus, nisi erat porttitor
+              ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum
+              nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem
+              lacinia quam venenatis vestibulum. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur et.
+            </p>
+            <a
+              href="blog-article.amp.html"
+              class="commerce-blog-link inline-block h7 md-mb4"
+              >read more</a
+            >
           </div>
-        </a>
-      </section> -->
-      <!-- <section class="commerce-hero-content-wrapper center overflow-hidden">
-
+        </article>
         
-        <a href="blog-listing.amp.html" class="text-decoration-none block">
-          <amp-img
-            class="commerce-hero-image"
-            src="img/e-commerce/narrow-landing-04.jpg"
-            width="750"
-            height="573"
-            layout="responsive"
-            media="(max-width: 52.06rem)"
-            alt="Hero Landing 1"
-            noloading=""
-          >
-            <div placeholder="" class="commerce-loader"></div>
-          </amp-img>
-          <amp-img
-            class="commerce-hero-image"
-            src="img/e-commerce/wide-landing-04.jpg"
-            width="2560"
-            height="800"
-            layout="responsive"
-            media="(min-width: 52.07rem)"
-            alt="Hero Landing 1"
-            noloading=""
-          >
-            <div placeholder="" class="commerce-loader"></div>
-          </amp-img>
-          <div
-            class="commerce-hero-content commerce-hero-content-theme-primary flex justify-center flex-column md-mx-auto md-p0"
-          >
-            <div class="commerce-hero-align md-mx-auto">
-              <h2
-                class="commerce-hero-content-title h4 md-h1 caps md-mb2 md-pl4"
+        
+      </section>
+      <aside
+        class="commerce-blog-sidebar commerce-side-panel xs-hide sm-hide md-col-4 md-px4 md-pt6"
+      >
+        <h1 class="h5 md-pb2">The bike shop blog</h1>
+        <p class="mb2">
+          Keep up with our news and travels as we explore the glorious variety
+          of cycling scenes across the UK (and beyond).
+        </p>
+
+        <h3 class="h7 block pt3">follow us</h3>
+        <ul
+          class="ampstart-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4"
+        >
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="inline-block p1"
+              aria-label="Link to AMP HTML Facebook"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="23.6"
+                viewBox="0 0 56 55"
               >
-                No Sleep &#39;til Brooklyn
-              </h2>
-              <p class="commerce-hero-content-body">
-                Early mornings, black coffee, carbs. We spend a week on the road
-                with New York&#39;s Five Borough Cycle Club.
-              </p>
-              <div class="ampstart-btn ampstart-btn-secondary caps md-ml4">
-                read
-              </div>
-            </div>
-          </div>
-        </a>
-      </section> -->
+                <title>Facebook</title>
+                <path
+                  d="M47.5 43c0 1.2-.9 2.1-2.1 2.1h-10V30h5.1l.8-5.9h-5.9v-3.7c0-1.7.5-2.9 3-2.9h3.1v-5.3c-.6 0-2.4-.2-4.6-.2-4.5 0-7.5 2.7-7.5 7.8v4.3h-5.1V30h5.1v15.1H10.7c-1.2 0-2.2-.9-2.2-2.1V8.3c0-1.2 1-2.2 2.2-2.2h34.7c1.2 0 2.1 1 2.1 2.2V43"
+                  class="ampstart-icon ampstart-icon-fb"
+                ></path></svg
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="inline-block p1"
+              aria-label="Link to AMP HTML Instagram"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 54 54"
+              >
+                <title>instagram</title>
+                <path
+                  d="M27.2 6.1c-5.1 0-5.8 0-7.8.1s-3.4.4-4.6.9c-1.2.5-2.3 1.1-3.3 2.2-1.1 1-1.7 2.1-2.2 3.3-.5 1.2-.8 2.6-.9 4.6-.1 2-.1 2.7-.1 7.8s0 5.8.1 7.8.4 3.4.9 4.6c.5 1.2 1.1 2.3 2.2 3.3 1 1.1 2.1 1.7 3.3 2.2 1.2.5 2.6.8 4.6.9 2 .1 2.7.1 7.8.1s5.8 0 7.8-.1 3.4-.4 4.6-.9c1.2-.5 2.3-1.1 3.3-2.2 1.1-1 1.7-2.1 2.2-3.3.5-1.2.8-2.6.9-4.6.1-2 .1-2.7.1-7.8s0-5.8-.1-7.8-.4-3.4-.9-4.6c-.5-1.2-1.1-2.3-2.2-3.3-1-1.1-2.1-1.7-3.3-2.2-1.2-.5-2.6-.8-4.6-.9-2-.1-2.7-.1-7.8-.1zm0 3.4c5 0 5.6 0 7.6.1 1.9.1 2.9.4 3.5.7.9.3 1.6.7 2.2 1.4.7.6 1.1 1.3 1.4 2.2.3.6.6 1.6.7 3.5.1 2 .1 2.6.1 7.6s0 5.6-.1 7.6c-.1 1.9-.4 2.9-.7 3.5-.3.9-.7 1.6-1.4 2.2-.7.7-1.3 1.1-2.2 1.4-.6.3-1.7.6-3.5.7-2 .1-2.6.1-7.6.1-5.1 0-5.7 0-7.7-.1-1.8-.1-2.9-.4-3.5-.7-.9-.3-1.5-.7-2.2-1.4-.7-.7-1.1-1.3-1.4-2.2-.3-.6-.6-1.7-.7-3.5 0-2-.1-2.6-.1-7.6 0-5.1.1-5.7.1-7.7.1-1.8.4-2.8.7-3.5.3-.9.7-1.5 1.4-2.2.7-.6 1.3-1.1 2.2-1.4.6-.3 1.6-.6 3.5-.7h7.7zm0 5.8c-5.4 0-9.7 4.3-9.7 9.7 0 5.4 4.3 9.7 9.7 9.7 5.4 0 9.7-4.3 9.7-9.7 0-5.4-4.3-9.7-9.7-9.7zm0 16c-3.5 0-6.3-2.8-6.3-6.3s2.8-6.3 6.3-6.3 6.3 2.8 6.3 6.3-2.8 6.3-6.3 6.3zm12.4-16.4c0 1.3-1.1 2.3-2.3 2.3-1.3 0-2.3-1-2.3-2.3 0-1.2 1-2.3 2.3-2.3 1.2 0 2.3 1.1 2.3 2.3z"
+                  class="ampstart-icon ampstart-icon-instagram"
+                ></path></svg
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              target="_blank"
+              class="inline-block p1"
+              aria-label="Link to AMP HTML Twitter"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="22.2"
+                viewBox="0 0 53 49"
+              >
+                <title>Twitter</title>
+                <path
+                  d="M45 6.9c-1.6 1-3.3 1.6-5.2 2-1.5-1.6-3.6-2.6-5.9-2.6-4.5 0-8.2 3.7-8.2 8.3 0 .6.1 1.3.2 1.9-6.8-.4-12.8-3.7-16.8-8.7C8.4 9 8 10.5 8 12c0 2.8 1.4 5.4 3.6 6.9-1.3-.1-2.6-.5-3.7-1.1v.1c0 4 2.8 7.4 6.6 8.1-.7.2-1.5.3-2.2.3-.5 0-1 0-1.5-.1 1 3.3 4 5.7 7.6 5.7-2.8 2.2-6.3 3.6-10.2 3.6-.6 0-1.3-.1-1.9-.1 3.6 2.3 7.9 3.7 12.5 3.7 15.1 0 23.3-12.6 23.3-23.6 0-.3 0-.7-.1-1 1.6-1.2 3-2.7 4.1-4.3-1.4.6-3 1.1-4.7 1.3 1.7-1 3-2.7 3.6-4.6"
+                  class="ampstart-icon ampstart-icon-twitter"
+                ></path></svg
+            ></a>
+          </li>
+        </ul>
+      </aside>
     </main>
     <footer class="commerce-footer center">
       <nav class="mx-auto md-mb0 md-pt5 md-pb5">
@@ -4008,7 +3770,7 @@
               </li>
             </ul>
           </li>
-          <!-- <li class="flex-auto right-align">
+          <li class="flex-auto right-align">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 137 84.3"
@@ -4061,7 +3823,7 @@
                 ></path>
               </g>
             </svg>
-          </li> -->
+          </li>
         </ul>
       </nav>
     </footer>
