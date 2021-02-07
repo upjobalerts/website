@@ -1,7 +1,25 @@
 {
 	"items": [
 		{
-			"job_id": "1",
+			"job_id": "6",
+            "name": "RBI - Jr Engineer",
+			"description": "Jobs for Civil/Electrical candidates",
+			"price": 867,
+			"image": "/img/e-commerce/product/product-3.jpg",
+			"category": "accessories",
+			"positions" : "48 Posts"
+		},
+		{
+			"job_id": "5",
+            "name": "UPSC - Joint Secretary & Director",
+			"description": "",
+			"price": 867,
+			"image": "/img/e-commerce/product/product-3.jpg",
+			"category": "accessories",
+			"positions" : "322 Posts"
+		},
+		{
+			"job_id": "4",
             "name": "RBI Grade B",
 			"description": "Highest post in Banking by direct exam",
 			"price": 867,
@@ -10,7 +28,7 @@
 			"positions" : "322 Posts"
 		},
 		{
-            "job_id": "2",
+            "job_id": "3",
 			"name": "SSC MTS 2020 Vaccancy",
 			"description": "Annual Exam by SSC.",
 			"price": 476,
@@ -19,7 +37,7 @@
 			"positions" : ""
 		},
 		{
-            "job_id": "3",
+            "job_id": "2",
 			"name": "HJS, Allahabad High Court",
 			"description": "Annual Exam by SSC.",
 			"price": "98 Positions",
@@ -28,7 +46,7 @@
 			"positions" : "98 Posts"
 		},
 		{
-            "job_id": "4",
+            "job_id": "1",
 			"name": "Indian Statistical Service (ISS)",
 			"description": "Annual Exam by UPSC.",
 			"price": "98 Positions",
