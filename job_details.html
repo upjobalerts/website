@@ -61,6 +61,23 @@
 
 <script src="./app/app.js"></script>
 <script>
+
+firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            if( user.email === "akutundla@gmail.com"){
+                console.log("11Write the code for storing the Job Posting to Firebase111");
+            }else {
+                console.log("Write the code for storing the Job Posting to Firebase");
+            }
+        } else {
+            console.log("No the user is not signed In");
+        }
+    });
+
+
+
+
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const job_id = urlParams.get('job_id')
@@ -69,34 +86,8 @@
    var jobListingData = [] ;
    var adminUser = false;
 
-//    firebase.auth().onAuthStateChanged(function(user) {
-//         if (user) {
-//             if( user.email === "akutundla@gmail.com"){
-//                 adminUser = true;
-//                 console.log("the user logged in email is " + user.email + " admin user" + adminUser );
-//             } else{
-//                 adminUser = false;
-//                 console.log("the admin user is not logged in. " + adminUser );
-//             }
-//         } 
-//     });
 
-        var user = firebase.auth().currentUser;
-
-        if (user) {
-            console.log(user);
-            if( user.email === "akutundla@gmail.com"){
-                adminUser = true;
-                console.log("the user logged in email is " + user.email + " admin user" + adminUser );
-            } else{
-                adminUser = false;
-                console.log("the admin user is not logged in. " + adminUser );
-            }
-        } 
-
-
-
-
+    
         var docRef = firestore.collection("Jobs_List").doc(job_id);
         var jobListingData = [] ;
             docRef.get().then((doc) => {
