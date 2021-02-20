@@ -13,9 +13,9 @@ var firebaseConfig = {
   firebase.analytics();
 
   var firestore = firebase.firestore();
-  const docRef = firestore.doc("Blog/Post");
-  const outputHeader = document.querySelector("#hotDogOutput");
-  const inputTextField = document.querySelector("#latestHotDogStatus");
+//   const docRef = firestore.doc("Blog/Post");
+//   const outputHeader = document.querySelector("#hotDogOutput");
+//   const inputTextField = document.querySelector("#latestHotDogStatus");
 //   const saveButton = document.querySelector("#saveButton");
 
 //   saveButton.addEventListener("click", function(){
