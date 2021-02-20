@@ -61,8 +61,24 @@
 
 <script src="./app/app.js"></script>
 <script>
- var adminUser = false;
-firebase.auth().onAuthStateChanged(function(user) {
+//  var adminUser = false;
+// firebase.auth().onAuthStateChanged(function(user) {
+//         if (user) {
+//             if( user.email === "akutundla@gmail.com"){
+//                 console.log("11Write the code for storing the Job Posting to Firebase111");
+//                 document.getElementById("updateJobPostingLink").style.display = "block";
+//                 document.getElementById("deleteJobPostingLink").style.display = "block";
+//             }else {
+//                 console.log("Write the code for storing the Job Posting to Firebase");
+//             }
+//         } else {
+//             adminUser = true;
+//             console.log("No the user is not signed In");
+//         }
+//     });
+
+    var user = firebase.auth().currentUser;
+
         if (user) {
             if( user.email === "akutundla@gmail.com"){
                 console.log("11Write the code for storing the Job Posting to Firebase111");
@@ -72,10 +88,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                 console.log("Write the code for storing the Job Posting to Firebase");
             }
         } else {
-            adminUser = true;
-            console.log("No the user is not signed In");
+        // No user is signed in.
         }
-    });
+
 
  
 
