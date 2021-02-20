@@ -48,8 +48,8 @@
                   
                   <a v-bind:href="'job_details.html?job_id='+ x.id">{{ x.data.jobTitle }}</a>
                      <p v-html="x.data.jobDescription"></p>
-                     <a v-if="adminUser" v-bind:href="'update-job-posting.html?job_id='+ x.id">Update</a>
-                     <a v-bind:href="'delete-job-posting.html?job_id='+ x.id">Delete</a>
+                     <a id="updateJobPostingLink" style="display:none;" v-bind:href="'update-job-posting.html?job_id='+ x.id">Update</a>
+                     <a id="deleteJobPostingLink" style="display:none;" v-bind:href="'delete-job-posting.html?job_id='+ x.id">Delete</a>
                   </li>
                  </ul>
                </div>
@@ -66,16 +66,18 @@ firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             if( user.email === "akutundla@gmail.com"){
                 console.log("11Write the code for storing the Job Posting to Firebase111");
-                adminUser = true;
+                document.getElementById("updateJobPostingLink").style.display = "block";
+                document.getElementById("deleteJobPostingLink").style.display = "block";
             }else {
                 console.log("Write the code for storing the Job Posting to Firebase");
             }
         } else {
+            adminUser = true;
             console.log("No the user is not signed In");
         }
     });
 
-
+ 
 
 
 
@@ -105,19 +107,12 @@ firebase.auth().onAuthStateChanged(function(user) {
                 console.log("Error getting document:", error);
             });
 
-     
-
-       
-
-        
-
-    myObject = new Vue({
-        el: '#latest_jobs_list',
-        data: {
-        todos: jobListingData,
-        adminUser: adminUser
-        }
-    })
+            myObject = new Vue({
+                el: '#latest_jobs_list',
+                data: {
+                todos: jobListingData
+                }
+            })
 
 
 
