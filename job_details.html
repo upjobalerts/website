@@ -37,7 +37,14 @@
         </div>
     </div>
 </div>
-
+<style>
+    #updateJobPostingLink{
+        display: none;
+    }
+    #deleteJobPostingLink{
+        display: none;
+    }
+</style>
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -48,8 +55,8 @@
                   
                   <a v-bind:href="'job_details.html?job_id='+ x.id">{{ x.data.jobTitle }}</a>
                      <p v-html="x.data.jobDescription"></p>
-                     <a id="updateJobPostingLink" style="display:none;" v-bind:href="'update-job-posting.html?job_id='+ x.id">Update</a>
-                     <a id="deleteJobPostingLink" style="display:none;" v-bind:href="'delete-job-posting.html?job_id='+ x.id">Delete</a>
+                     <a id="updateJobPostingLink" v-bind:href="'update-job-posting.html?job_id='+ x.id">Update</a>
+                     <a id="deleteJobPostingLink" v-bind:href="'delete-job-posting.html?job_id='+ x.id">Delete</a>
                   </li>
                  </ul>
                </div>
@@ -66,9 +73,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             console.log(user);
             if( user.email === "akutundla@gmail.com"){
-                console.log("11Write the code for storing the Job Posting to Firebase111");
-                document.getElementById("updateJobPostingLink").style.display = "block";
-                document.getElementById("deleteJobPostingLink").style.display = "block";
+                console.log("211Write the code for storing the Job Posting to Firebase111");
+                document.querySelector("#updateJobPostingLink").style.display = "block";
+                document.querySelector("#deleteJobPostingLink").style.display = "block";
+                
             }else {
                 console.log("Write the code for storing the Job Posting to Firebase");
             }
