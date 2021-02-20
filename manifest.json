@@ -1,7 +1,7 @@
 {
     "theme_color": "#9b9b9b",
     "background_color": "#b9cfb9",
-    "display": "browser",
+    "display": "standalone",
     "scope": "/",
     "start_url": "/",
     "name": "UpJobalerts",
