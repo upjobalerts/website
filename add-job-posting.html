@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -65,16 +64,50 @@
 
 <script>
     firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        if( user.email !== "akutundla@gmail.com"){
-            window.location.href="https://upjobalerts.com/"; 
-        }else {
-            console.log("Write the code for storing the Job Posting to Firebase");
+        if (user) {
+            if( user.email !== "akutundla@gmail.com"){
+                window.location.href="https://upjobalerts.com/"; 
+            }else {
+                
+                var firestore = firebase.firestore();
+                const docRef = firestore.doc("Jobs_List/Vaccancy");
+                const JobPostingTitle = document.querySelector("#addJobPostingTitle");
+                const JobPostingDescription = document.querySelector("#addJobPostingDescription");
+                const saveJobPostingButton = document.querySelector("#saveJobPostingButton");
+                
+                saveJobPostingButton.addEventListener("click", function(){
+                    const jotTitle = JobPostingTitle.value;
+                    const jobDescription = JobPostingDescription.value;
+                    docRef.set({
+                        jobTitle: jotTitle,
+                        jobDescription: jobDescription
+                    }).then(function(){
+                        console.log("Job Added!");
+                    }).catch(function(error){
+                        console.log("Got an error", error);   
+                    });
+
+                });
+
+            //   saveButton.addEventListener("click", function(){
+            //       const textToSave = inputTextField.value;
+            //       console.log("I am goint to save " + textToSave + " to Firebase");
+            //         docRef.set({
+            //             hotDogStatus: textToSave
+            //         }).then(function(){
+            //             console.log("Status saved!");
+            //         }).catch(function(error){
+            //          console.log("Got an error", error);   
+            //         })
+            //     })
+    
+    
+                console.log("Write the code for storing the Job Posting to Firebase");
+            }
+        } else {
+            console.log("No the user is not signed In");
+            window.location.href="login.html"; 
         }
-    } else {
-        console.log("No the user is not signed In");
-        window.location.href="login.html"; 
-    }
     });
 </script>
 
