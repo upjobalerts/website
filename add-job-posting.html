@@ -72,12 +72,14 @@
                 var firestore = firebase.firestore();
                 const docRef = firestore.doc("Jobs_List/Vaccancy");
                 const JobPostingTitle = document.querySelector("#addJobPostingTitle");
-                const JobPostingDescription = document.querySelector("#addJobPostingDescription");
+                
+               
                 const saveJobPostingButton = document.querySelector("#saveJobPostingButton");
                 
                 saveJobPostingButton.addEventListener("click", function(){
                     const jotTitle = JobPostingTitle.value;
-                    const jobDescription = JobPostingDescription.value;
+                    var JobPostingDescription = CKEDITOR.instances.addJobPostingDescription.getData();
+                    const jobDescription = JobPostingDescription;
                     docRef.set({
                         jobTitle: jotTitle,
                         jobDescription: jobDescription
