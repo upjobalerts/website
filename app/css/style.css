@@ -1,10 +1,14 @@
 
 body{
     margin:0px;
+    font-family: "Segoe UI";
 }
 
+h2{
+    margin-top: 10px;
+}
 body{
-    font-family: "Segoe UI";
+
 }
 h2{
     margin-top: 10px;
