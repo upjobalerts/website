@@ -92,6 +92,10 @@
         if (user) {
             if( user.email === "akutundla@gmail.com"){
                 adminUser = true;
+                console.log("the user logged in email is " + user.email + " admin user" + adminUser );
+            } else{
+                adminUser = false;
+                console.log("the admin user is not logged in. " + adminUser );
             }
         } 
     });
