@@ -21,12 +21,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff" href="https://www.microsoft.com/mwf/_h/v3.54/mwf.app/fonts/mwfmdl2-v3.54.woff2">
 <style>
-    body{
-        font-family: "Segoe UI";
-    }
-    h2{
-        margin-top: 10px;
-    }
+    
     
 </style>
 <div id="latest_jobs_list" v-for="x in todos">
@@ -53,8 +48,7 @@
                          <!-- <a v-bind:href="'update-job-posting.html?job_id='+ x.id">Update</a>
                          <a v-bind:href="'delete-job-posting.html?job_id='+ x.id">Delete</a> -->
                     
-                   <a id="deleteJobPostingLink" href="#">Delete</a>
-                   <a id="updateJobPostingLink" href="#">Update</a>
+                   
             </div>
         </div>
     
@@ -68,7 +62,13 @@
 
 
 <div class="container">
-    
+    <div class="row">
+        <div class="col-sm-12">
+            <a id="deleteJobPostingLink" href="#">Delete</a>
+            <a id="updateJobPostingLink" href="#">Update</a>
+        </div>
+    </div>
+   
 </div>
 
 <script src="./app/app.js"></script>
