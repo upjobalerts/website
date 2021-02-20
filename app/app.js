@@ -1,3 +1,10 @@
+if ('serviceWorker' in navigator) {
+  // Use the window load event to keep the page load performant
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js');
+  });
+}
+
 // Initialize Cloud Firestore through Firebase
 var firebaseConfig = {
     apiKey: "AIzaSyBP7ZuyIp8hO6P7agzAQjenYpEMO7UvG-Y",

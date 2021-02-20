@@ -51,12 +51,9 @@ h2{
   }
 
  
-  .mdl-card {
+  #latest_jobs_list .mdl-card {
     min-height: auto !important;
-    margin: 10px 10px;
-    
   }
-
 
 
 .footer{
