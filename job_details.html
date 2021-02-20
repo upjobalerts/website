@@ -67,6 +67,7 @@
     console.log(job_id);
     var firestore = firebase.firestore();
    var jobListingData = [] ;
+   var adminUser = false;
 
 //    firebase.auth().onAuthStateChanged(function(user) {
 //         if (user) {
@@ -83,6 +84,7 @@
         var user = firebase.auth().currentUser;
 
         if (user) {
+            console.log(user);
             if( user.email === "akutundla@gmail.com"){
                 adminUser = true;
                 console.log("the user logged in email is " + user.email + " admin user" + adminUser );
@@ -111,7 +113,7 @@
                 console.log("Error getting document:", error);
             });
 
-        var adminUser = false;
+     
 
        
 
