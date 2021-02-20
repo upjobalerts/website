@@ -61,11 +61,12 @@
 
 <script src="./app/app.js"></script>
 <script>
-
+ var adminUser = false;
 firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             if( user.email === "akutundla@gmail.com"){
                 console.log("11Write the code for storing the Job Posting to Firebase111");
+                adminUser = true;
             }else {
                 console.log("Write the code for storing the Job Posting to Firebase");
             }
@@ -84,7 +85,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log(job_id);
     var firestore = firebase.firestore();
    var jobListingData = [] ;
-   var adminUser = false;
+  
 
 
     
