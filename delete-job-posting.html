@@ -54,71 +54,35 @@
 
 <script>
 
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const job_id = urlParams.get('job_id')
-        console.log(job_id);
-        var firestore = firebase.firestore();
-           
-        const deleteJobPostingButton = document.querySelector("#deleteJobPosting");
-        
-        deleteJobPostingButton.addEventListener("click", function(){
-            firestore.collection("Jobs_List").doc(job_id).delete().then(() => {
-                console.log("Document successfully deleted!");
-            }).catch((error) => {
-                console.error("Error removing document: ", error);
-            });
-        });
-
-
-
-
-
-
-
-
-    // firebase.auth().onAuthStateChanged(function(user) {
-    //     if (user) {
-    //         if( user.email !== "akutundla@gmail.com"){
-    //             window.location.href="https://upjobalerts.com/"; 
-    //         }else {
-                
-    //             var firestore = firebase.firestore();
-    //             const docRef = firestore.doc("Jobs_List/Vaccancy");
-    //             const JobPostingTitle = document.querySelector("#addJobPostingTitle");
-                
-               
-    //             const saveJobPostingButton = document.querySelector("#saveJobPostingButton");
-                
-    //             saveJobPostingButton.addEventListener("click", function(){
-    //                 const jotTitle = JobPostingTitle.value;
-    //                 var JobPostingDescription = CKEDITOR.instances.addJobPostingDescription.getData();
-    //                 const jobDescription = JobPostingDescription;
-                   
-
-    //                 firestore.collection("Jobs_List").add({
-    //                     jobTitle: jotTitle,
-    //                     jobDescription: jobDescription
-    //                 })
-    //                 .then((docRef) => {
-    //                     console.log("Document written with ID: ", docRef.id);
-    //                 })
-    //                 .catch((error) => {
-    //                     console.error("Error adding document: ", error);
-    //                 });
-
-    //             });
-
-           
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const job_id = urlParams.get('job_id')
+    //console.log(job_id);
     
-    
-    //             console.log("Write the code for storing the Job Posting to Firebase");
-    //         }
-    //     } else {
-    //         console.log("No the user is not signed In");
-    //         window.location.href="login.html"; 
-    //     }
-    // });
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            if( user.email !== "akutundla@gmail.com"){
+                window.location.href="https://upjobalerts.com/"; 
+            }else {
+                
+                var firestore = firebase.firestore();
+           
+                    const deleteJobPostingButton = document.querySelector("#deleteJobPosting");
+                    
+                    deleteJobPostingButton.addEventListener("click", function(){
+                        firestore.collection("Jobs_List").doc(job_id).delete().then(() => {
+                            console.log("Document successfully deleted!");
+                        }).catch((error) => {
+                            console.error("Error removing document: ", error);
+                        });
+                    });
+            }
+        } else {
+            console.log("No the user is not signed In");
+            window.location.href="login.html"; 
+        }
+    });
 </script>
 
 </body>

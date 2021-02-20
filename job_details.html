@@ -49,12 +49,13 @@
                   
                   <p>{{ x.data.jobTitle }}</p>
                      <p v-html="x.data.jobDescription"></p>
-                     <a v-if="adminUser" v-bind:href="'update-job-posting.html?job_id='+ x.id">Update</a>
-                     <a v-bind:href="'delete-job-posting.html?job_id='+ x.id">Delete</a>
+                     <!-- <a v-bind:href="'update-job-posting.html?job_id='+ x.id">Update</a>
+                     <a v-bind:href="'delete-job-posting.html?job_id='+ x.id">Delete</a> -->
                   </li>
                  </ul>
                </div>
-            
+               <a id="deleteJobPostingLink" href="#">Delete</a>
+               <a id="updateJobPostingLink" href="#">Update</a>
         </div>
 
     </div>
@@ -62,19 +63,33 @@
 
 <script src="./app/app.js"></script>
 <script>
+
+const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const job_id = urlParams.get('job_id')
+    console.log(job_id);
+    var firestore = firebase.firestore();
+   var jobListingData = [] ;
+
  var adminUser = false;
 firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             console.log(user);
             if( user.email === "akutundla@gmail.com"){
-                console.log("2116879Write the code for storing the Job Posting to Firebase111");
+                console.log("drtfgyhj the code for storing the Job Posting to Firebase111");
                 adminUser = true;
-                myObject.$forceUpdate();
-
+                
+                document.querySelector("#updateJobPostingLink").setAttribute('href', "update-job-posting.html?job_id="+job_id);
+                document.querySelector("#deleteJobPostingLink").setAttribute('href', "delete-job-posting.html?job_id="+job_id);
             }else {
                 console.log("Write the code for storing the Job Posting to Firebase");
             }
         } else {
+            
+            
+            document.getElementById("updateJobPostingLink").innerHTML = "";
+            document.getElementById("deleteJobPostingLink").innerHTML = "";
+            
             
             console.log("No the user is not signed In");
         }
@@ -99,12 +114,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const job_id = urlParams.get('job_id')
-    console.log(job_id);
-    var firestore = firebase.firestore();
-   var jobListingData = [] ;
+ 
   
 
 

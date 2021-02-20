@@ -70,112 +70,83 @@
         const urlParams = new URLSearchParams(queryString);
         const job_id = urlParams.get('job_id')
         console.log(job_id);
-        var firestore = firebase.firestore();
-        var jobListingData = [] ;
-
-        const JobPostingTitle = document.querySelector("#addJobPostingTitle");
-
-        var docRef = firestore.collection("Jobs_List").doc(job_id);
-        var jobListingData = [] ;
-        docRef.get().then((doc) => {
-            if (doc.exists) {  
-                    var jobItem = {"id": doc.id, "data": doc.data()}
-                    console.log(jobItem);
-                    jobListingData.push(jobItem);
-                    console.log(jobListingData);
-                    JobPostingTitle.value = doc.data().jobTitle;
-                    CKEDITOR.instances.addJobPostingDescription.setData(doc.data().jobDescription);
-                    
-            } else {
-                console.log("No such document!");
-            }
-        }).catch((error) => {
-            console.log("Error getting document:", error);
-        });
 
 
-        var docID = "Jobs_List/"+job_id;
-        const docRefupdate = firestore.doc(docID);
+
+
+       
+
+
+
+
+
+
+
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            if( user.email !== "akutundla@gmail.com"){
+                window.location.href="https://upjobalerts.com/"; 
+            }else {
                 
-                
-               
-                const saveJobPostingButton = document.querySelector("#saveJobPostingButton");
-                
-                saveJobPostingButton.addEventListener("click", function(){
-                    const jotTitle = JobPostingTitle.value;
-                    var JobPostingDescription = CKEDITOR.instances.addJobPostingDescription.getData();
-                    const jobDescription = JobPostingDescription;
-                    docRefupdate.set({
-                        jobTitle: jotTitle,
-                        jobDescription: jobDescription
-                    }).then(function(){
-                        console.log("Job Details Updated!");
-                    }).catch(function(error){
-                        console.log("Got an error", error);   
-                    });
+                var firestore = firebase.firestore();
+                var jobListingData = [] ;
 
-                    // firestore.collection("Jobs_List").add({
-                    //     jobTitle: jotTitle,
-                    //     jobDescription: jobDescription
-                    // })
-                    // .then((docRef) => {
-                    //     console.log("Document written with ID: ", docRef.id);
-                    // })
-                    // .catch((error) => {
-                    //     console.error("Error adding document: ", error);
-                    // });
+                const JobPostingTitle = document.querySelector("#addJobPostingTitle");
 
+                var docRef = firestore.collection("Jobs_List").doc(job_id);
+                var jobListingData = [] ;
+                docRef.get().then((doc) => {
+                    if (doc.exists) {  
+                            var jobItem = {"id": doc.id, "data": doc.data()}
+                            console.log(jobItem);
+                            jobListingData.push(jobItem);
+                            console.log(jobListingData);
+                            JobPostingTitle.value = doc.data().jobTitle;
+                            CKEDITOR.instances.addJobPostingDescription.setData(doc.data().jobDescription);
+                            
+                    } else {
+                        console.log("No such document!");
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
                 });
 
 
+                var docID = "Jobs_List/"+job_id;
+                const docRefupdate = firestore.doc(docID);
+                        
+                        
+                    
+                        const saveJobPostingButton = document.querySelector("#saveJobPostingButton");
+                        
+                        saveJobPostingButton.addEventListener("click", function(){
+                            const jotTitle = JobPostingTitle.value;
+                            var JobPostingDescription = CKEDITOR.instances.addJobPostingDescription.getData();
+                            const jobDescription = JobPostingDescription;
+                            docRefupdate.set({
+                                jobTitle: jotTitle,
+                                jobDescription: jobDescription
+                            }).then(function(){
+                                console.log("Job Details Updated!");
+                            }).catch(function(error){
+                                console.log("Got an error", error);   
+                            });
 
+                        
 
-
-
-
-
-    // firebase.auth().onAuthStateChanged(function(user) {
-    //     if (user) {
-    //         if( user.email !== "akutundla@gmail.com"){
-    //             window.location.href="https://upjobalerts.com/"; 
-    //         }else {
-                
-    //             var firestore = firebase.firestore();
-    //             const docRef = firestore.doc("Jobs_List/Vaccancy");
-    //             const JobPostingTitle = document.querySelector("#addJobPostingTitle");
-                
-               
-    //             const saveJobPostingButton = document.querySelector("#saveJobPostingButton");
-                
-    //             saveJobPostingButton.addEventListener("click", function(){
-    //                 const jotTitle = JobPostingTitle.value;
-    //                 var JobPostingDescription = CKEDITOR.instances.addJobPostingDescription.getData();
-    //                 const jobDescription = JobPostingDescription;
-                   
-
-    //                 firestore.collection("Jobs_List").add({
-    //                     jobTitle: jotTitle,
-    //                     jobDescription: jobDescription
-    //                 })
-    //                 .then((docRef) => {
-    //                     console.log("Document written with ID: ", docRef.id);
-    //                 })
-    //                 .catch((error) => {
-    //                     console.error("Error adding document: ", error);
-    //                 });
-
-    //             });
+                        });
 
            
     
     
-    //             console.log("Write the code for storing the Job Posting to Firebase");
-    //         }
-    //     } else {
-    //         console.log("No the user is not signed In");
-    //         window.location.href="login.html"; 
-    //     }
-    // });
+                console.log("Write the code for storing the Job Posting to Firebase");
+            }
+        } else {
+            console.log("No the user is not signed In");
+            window.location.href="login.html"; 
+        }
+    });
 </script>
 
 </body>
