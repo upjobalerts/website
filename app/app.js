@@ -1,7 +1,3 @@
-const firebase = require("firebase");
-// Required for side-effects
-require("firebase/firestore");
-
 // Initialize Cloud Firestore through Firebase
 var firebaseConfig = {
     apiKey: "AIzaSyBP7ZuyIp8hO6P7agzAQjenYpEMO7UvG-Y",
@@ -16,19 +12,24 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
+  var firestore = firebase.firestore();
+  const docRef = firestore.doc("Blog/Post");
+  const outputHeader = document.querySelector("#hotDogOutput");
+  const inputTextField = document.querySelector("#latestHotDogStatus");
+  const saveButton = document.querySelector("#saveButton");
+
+  saveButton.addEventListener("click", function(){
+      const textToSave = inputTextField.value;
+      console.log("I am goint to save " + textToSave + " to Firebase");
+        docRef.set({
+            hotDogStatus: textToSave
+        }).then(function(){
+            console.log("Status saved!");
+        }).catch(function(error){
+         console.log("Got an error", error);   
+        })
+    })
 
   
-  var db = firebase.firestore();
 
 
-  db.collection("Blogs").add({
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
-})
-.then((docRef) => {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch((error) => {
-    console.error("Error adding document: ", error);
-});
