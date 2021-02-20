@@ -69,9 +69,17 @@
         // User is signed in.
         console.log("The user is sined in");
         console.log(user);
+       console.log("the email of the user is " + user.email);
+       if( user.email === "akutundla@gmail.com"){
+        
+       } else {
+            window.location.href="https://upjobalerts.com/";    
+       }
+
     } else {
         // No user is signed in.
         console.log("No the user is not signed In");
+        window.location.href="login.html"; 
     }
     });
 </script>
