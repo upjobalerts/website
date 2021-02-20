@@ -80,13 +80,24 @@
                     const jotTitle = JobPostingTitle.value;
                     var JobPostingDescription = CKEDITOR.instances.addJobPostingDescription.getData();
                     const jobDescription = JobPostingDescription;
-                    docRef.set({
+                    // docRef.set({
+                    //     jobTitle: jotTitle,
+                    //     jobDescription: jobDescription
+                    // }).then(function(){
+                    //     console.log("Job Added!");
+                    // }).catch(function(error){
+                    //     console.log("Got an error", error);   
+                    // });
+
+                    firestore.collection("Jobs_List").add({
                         jobTitle: jotTitle,
                         jobDescription: jobDescription
-                    }).then(function(){
-                        console.log("Job Added!");
-                    }).catch(function(error){
-                        console.log("Got an error", error);   
+                    })
+                    .then((docRef) => {
+                        console.log("Document written with ID: ", docRef.id);
+                    })
+                    .catch((error) => {
+                        console.error("Error adding document: ", error);
                     });
 
                 });
