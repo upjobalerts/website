@@ -21,7 +21,7 @@ var firebaseConfig = {
   var db = firebase.firestore();
 
 
-  db.collection("users").add({
+  db.collection("Blogs").add({
     first: "Ada",
     last: "Lovelace",
     born: 1815
