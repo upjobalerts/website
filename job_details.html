@@ -64,6 +64,7 @@
  var adminUser = false;
 firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+            console.log(user);
             if( user.email === "akutundla@gmail.com"){
                 console.log("11Write the code for storing the Job Posting to Firebase111");
                 document.getElementById("updateJobPostingLink").style.display = "block";
