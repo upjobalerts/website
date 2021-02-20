@@ -43,9 +43,20 @@ h2{
 }
 
 
-.latest_jobs_list li{
-    list-style: none;
-}
+
+
+#job_list_cards_wrap{
+    display: inline-block;
+   
+  }
+
+ 
+  .mdl-card {
+    min-height: auto !important;
+    margin: 10px 10px;
+    
+  }
+
 
 
 .footer{

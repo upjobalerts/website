@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <title>Up Job Alerts</title>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="app/css/style.css" />
 </head>
 </body>
@@ -34,14 +37,46 @@
 
 
 <div id="latest_jobs_list">
-  <ul>
-    <li v-for="x in todos">
-    <p>{{ x.data.jobTitle }}</p>
-    <a v-bind:href="'job_details.html?job_id='+ x.id">More Details</a>
+  
+   
       
-    </li>
+      <!-- Wide card with share menu button -->
+<style>
+  .demo-card-wide.mdl-card {
+    width: 512px;
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+   
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
+  .demo-card-wide{
+    margin: 20px 0px;
+  }
+  
+  </style>
+  <div id="job_list_cards_wrap" v-for="x in todos">
     
-   </ul>
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    
+      <div class="mdl-card__supporting-text">
+        <p>{{ x.data.jobTitle }}</p>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" v-bind:href="'job_details.html?job_id='+ x.id">
+          Details
+        </a>
+      </div>
+    
+    </div>
+   
+  </div>
+   
+    
+   
  </div>
 
 <div class="footer">
