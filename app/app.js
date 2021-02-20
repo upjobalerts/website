@@ -16,19 +16,19 @@ var firebaseConfig = {
   const docRef = firestore.doc("Blog/Post");
   const outputHeader = document.querySelector("#hotDogOutput");
   const inputTextField = document.querySelector("#latestHotDogStatus");
-  const saveButton = document.querySelector("#saveButton");
+//   const saveButton = document.querySelector("#saveButton");
 
-  saveButton.addEventListener("click", function(){
-      const textToSave = inputTextField.value;
-      console.log("I am goint to save " + textToSave + " to Firebase");
-        docRef.set({
-            hotDogStatus: textToSave
-        }).then(function(){
-            console.log("Status saved!");
-        }).catch(function(error){
-         console.log("Got an error", error);   
-        })
-    })
+//   saveButton.addEventListener("click", function(){
+//       const textToSave = inputTextField.value;
+//       console.log("I am goint to save " + textToSave + " to Firebase");
+//         docRef.set({
+//             hotDogStatus: textToSave
+//         }).then(function(){
+//             console.log("Status saved!");
+//         }).catch(function(error){
+//          console.log("Got an error", error);   
+//         })
+//     })
 
   
 
