@@ -67,7 +67,32 @@
     console.log(job_id);
     var firestore = firebase.firestore();
    var jobListingData = [] ;
-    
+
+//    firebase.auth().onAuthStateChanged(function(user) {
+//         if (user) {
+//             if( user.email === "akutundla@gmail.com"){
+//                 adminUser = true;
+//                 console.log("the user logged in email is " + user.email + " admin user" + adminUser );
+//             } else{
+//                 adminUser = false;
+//                 console.log("the admin user is not logged in. " + adminUser );
+//             }
+//         } 
+//     });
+
+        var user = firebase.auth().currentUser;
+
+        if (user) {
+            if( user.email === "akutundla@gmail.com"){
+                adminUser = true;
+                console.log("the user logged in email is " + user.email + " admin user" + adminUser );
+            } else{
+                adminUser = false;
+                console.log("the admin user is not logged in. " + adminUser );
+            }
+        } 
+
+
 
 
         var docRef = firestore.collection("Jobs_List").doc(job_id);
@@ -88,17 +113,9 @@
 
         var adminUser = false;
 
-        firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            if( user.email === "akutundla@gmail.com"){
-                adminUser = true;
-                console.log("the user logged in email is " + user.email + " admin user" + adminUser );
-            } else{
-                adminUser = false;
-                console.log("the admin user is not logged in. " + adminUser );
-            }
-        } 
-    });
+       
+
+        
 
     myObject = new Vue({
         el: '#latest_jobs_list',
