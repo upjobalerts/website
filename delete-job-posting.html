@@ -1,0 +1,125 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Up Job Alerts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+</body>
+    
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<link rel="preload" as="font" crossorigin="crossorigin" type="font/woff" href="https://www.microsoft.com/mwf/_h/v3.54/mwf.app/fonts/mwfmdl2-v3.54.woff2">
+<style>
+    body{
+        font-family: "Segoe UI";
+    }
+    h2{
+        margin-top: 10px;
+    }
+</style>
+
+<div class="container-fluid" style="background-color:#d6c3c3; margin-bottom:30px;">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h4>Add New Job Posting</h4>
+
+           
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <p>Do You Really Want to delete this Job Posting.</p>
+            <button class="btn btn-primary" id="deleteJobPosting">Delete</button>
+            <button class="btn btn-primary" id="cancelDeletion">Cancel</button>
+            
+        </div>
+
+    </div>
+</div>
+
+<script src="./app/app.js"></script>
+
+<script>
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const job_id = urlParams.get('job_id')
+        console.log(job_id);
+        var firestore = firebase.firestore();
+           
+        const deleteJobPostingButton = document.querySelector("#deleteJobPosting");
+        
+        deleteJobPostingButton.addEventListener("click", function(){
+            firestore.collection("Jobs_List").doc(job_id).delete().then(() => {
+                console.log("Document successfully deleted!");
+            }).catch((error) => {
+                console.error("Error removing document: ", error);
+            });
+        });
+
+
+
+
+
+
+
+
+    // firebase.auth().onAuthStateChanged(function(user) {
+    //     if (user) {
+    //         if( user.email !== "akutundla@gmail.com"){
+    //             window.location.href="https://upjobalerts.com/"; 
+    //         }else {
+                
+    //             var firestore = firebase.firestore();
+    //             const docRef = firestore.doc("Jobs_List/Vaccancy");
+    //             const JobPostingTitle = document.querySelector("#addJobPostingTitle");
+                
+               
+    //             const saveJobPostingButton = document.querySelector("#saveJobPostingButton");
+                
+    //             saveJobPostingButton.addEventListener("click", function(){
+    //                 const jotTitle = JobPostingTitle.value;
+    //                 var JobPostingDescription = CKEDITOR.instances.addJobPostingDescription.getData();
+    //                 const jobDescription = JobPostingDescription;
+                   
+
+    //                 firestore.collection("Jobs_List").add({
+    //                     jobTitle: jotTitle,
+    //                     jobDescription: jobDescription
+    //                 })
+    //                 .then((docRef) => {
+    //                     console.log("Document written with ID: ", docRef.id);
+    //                 })
+    //                 .catch((error) => {
+    //                     console.error("Error adding document: ", error);
+    //                 });
+
+    //             });
+
+           
+    
+    
+    //             console.log("Write the code for storing the Job Posting to Firebase");
+    //         }
+    //     } else {
+    //         console.log("No the user is not signed In");
+    //         window.location.href="login.html"; 
+    //     }
+    // });
+</script>
+
+</body>
+</html>
