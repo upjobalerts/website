@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Up Job Alerts</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="app/css/style.css" />
+    <script data-ad-client="ca-pub-2793302246564663" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+</body>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+
+
+
+<!-- Uses a transparent header that draws on top of the layout's background -->
+<style>
+  .demo-layout-transparent {
+    background: url('../assets/demos/transparent.jpg') center / cover;
+  }
+  .demo-layout-transparent .mdl-layout__header,
+  .demo-layout-transparent .mdl-layout__drawer-button {
+    /* This background is dark, so we set text to white. Use 87% black instead if
+       your background is light. */
+    color: #444444;
+  }
+  .mdl-layout__header-row .mdl-navigation__link{
+    color: #444444;
+  }
+  </style>
+  <style>
+   
+    .demo-card-wide > .mdl-card__title {
+      color: #fff;
+      height: 176px;
+     
+    }
+    .demo-card-wide > .mdl-card__menu {
+      color: #fff;
+    }
+    .demo-card-wide{
+      margin: 20px 0px;
+    }
+  
+   
+  
+    
+    </style>
+  <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Upjobalerts</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation -->
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/">Home</a>
+          <a class="mdl-navigation__link" href="/resources.html">Resources</a>
+          <a class="mdl-navigation__link" href="/blog.html">Blog</a>
+          <a class="mdl-navigation__link" href="/login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Upjobalerts</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Home</a>
+        <a class="mdl-navigation__link" href="/resources.html">Resources</a>
+        <a class="mdl-navigation__link" href="/blog.html">Blog</a>
+        <a class="mdl-navigation__link" href="/login.html">Login</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+
+
+        <style>
+            .demo-card-wide.mdl-card {
+              width: 512px;
+            }
+            .demo-card-wide > .mdl-card__title {
+              color: #fff;
+              height: 176px;
+              background: url('../assets/demos/welcome_card.jpg') center / cover;
+            }
+            .demo-card-wide > .mdl-card__menu {
+              color: #fff;
+            }
+            </style>
+            
+            
+
+
+
+
+
+      <div >
+  
+ 
+      
+        <!-- Wide card with share menu button -->
+  
+    <div class="mdl-grid">
+
+        <div class="mdl-cell--1-col-desktop">
+            <p></p>
+        </div>
+        <div class="mdl-cell--5-col-desktop">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col-desktop">
+                <div class="mdl-card__title" style="background: url('../website-images/daily-free-tests-banner.jpg') center / cover;">
+                  <h2 class="mdl-card__title-text" style="color:#444444;">Daily Free Tests</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <p>Daily Tests are essential to any exam, so you need to give ample mock tests so as to be familiar with the actual test. Here we offer online free tests both in English and in Hindi.</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get Started
+                  </a>
+                </div>
+                <div class="mdl-card__menu">
+                  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                  </button>
+                </div>
+              </div>
+        </div>
+
+        <div class="mdl-cell--5-col-desktop">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col-desktop">
+                <div class="mdl-card__title" style="background: url('../website-images/english-grammer.jpg') center / cover;">
+                  <h2 class="mdl-card__title-text" style="color:#444444;">English</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <p>Daily Tests are essential to any exam, so you need to give ample mock tests so as to be familiar with the actual test. Here we offer online free tests both in English and in Hindi.</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get Started
+                  </a>
+                </div>
+                <div class="mdl-card__menu">
+                  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="mdl-cell--1-col-desktop">
+            <p></p>
+        </div>
+    </div>
+
+    <div class="mdl-grid">
+
+        <div class="mdl-cell--1-col-desktop">
+            <p></p>
+        </div>
+        <div class="mdl-cell--5-col-desktop">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col-desktop">
+                <div class="mdl-card__title" style="background: url('../website-images/computer-awareness-banner.png') center / cover;">
+                  <h2 class="mdl-card__title-text" style="color:#444444;">Daily Free Tests</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <p>Daily Tests are essential to any exam, so you need to give ample mock tests so as to be familiar with the actual test. Here we offer online free tests both in English and in Hindi.</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get Started
+                  </a>
+                </div>
+                <div class="mdl-card__menu">
+                  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                  </button>
+                </div>
+              </div>
+        </div>
+
+        <div class="mdl-cell--5-col-desktop">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col-desktop">
+                <div class="mdl-card__title" style="background: url('../website-images/maths-banner.png') center / cover;">
+                  <h2 class="mdl-card__title-text" style="color:#fff;">Maths</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <p>Daily Tests are essential to any exam, so you need to give ample mock tests so as to be familiar with the actual test. Here we offer online free tests both in English and in Hindi.</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get Started
+                  </a>
+                </div>
+                <div class="mdl-card__menu">
+                  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="mdl-cell--1-col-desktop">
+            <p></p>
+        </div>
+    </div>
+
+    <div class="mdl-grid">
+
+        <div class="mdl-cell--1-col-desktop">
+            <p></p>
+        </div>
+        <div class="mdl-cell--5-col-desktop">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col-desktop">
+                <div class="mdl-card__title" style="background: url('../website-images/reasoning-banner.jpg') center / cover;">
+                  <h2 class="mdl-card__title-text" style="color:#444444;">Reasoning</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <p>Daily Tests are essential to any exam, so you need to give ample mock tests so as to be familiar with the actual test. Here we offer online free tests both in English and in Hindi.</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get Started
+                  </a>
+                </div>
+                <div class="mdl-card__menu">
+                  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                  </button>
+                </div>
+              </div>
+        </div>
+
+        <div class="mdl-cell--5-col-desktop">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col-desktop">
+                <div class="mdl-card__title" style="background: url('../website-images/up-gk-banner.png') center / cover;">
+                  <h2 class="mdl-card__title-text" style="color:#fff;">UP General Knowledge</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <p>Daily Tests are essential to any exam, so you need to give ample mock tests so as to be familiar with the actual test. Here we offer online free tests both in English and in Hindi.</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get Started
+                  </a>
+                </div>
+                <div class="mdl-card__menu">
+                  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="mdl-cell--1-col-desktop">
+            <p></p>
+        </div>
+    </div>
+
+    <div class="mdl-grid">
+
+        <div class="mdl-cell--1-col-desktop">
+            <p></p>
+        </div>
+        
+
+        <div class="mdl-cell--5-col-desktop">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col-desktop">
+                <div class="mdl-card__title" style="background: url('../website-images/typing-keyboard.jpg') center / cover;">
+                  <h2 class="mdl-card__title-text" style="color:#444444;">Daily Free Tests</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <p>Daily Tests are essential to any exam, so you need to give ample mock tests so as to be familiar with the actual test. Here we offer online free tests both in English and in Hindi.</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get Started
+                  </a>
+                </div>
+                <div class="mdl-card__menu">
+                  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="mdl-cell--1-col-desktop">
+            <p></p>
+        </div>
+    </div>
+
+   </div>
+
+   <div class="mdl-grid footer">
+     <p>Copyright &#169; 2021</p>
+   </div>
+
+    </main>
+  </div>
+
+<script src="./app/app.js"></script>
+<script>
+   var firestore = firebase.firestore();
+   var jobListingData = [] ;
+   firestore.collection("Jobs_List")
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((vaccany) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(vaccany.id, " => ", vaccany.data());
+            var jobItem = {"id": vaccany.id, "data": vaccany.data()}
+            console.log(jobItem);
+            jobListingData.push(jobItem);
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
+
+    myObject = new Vue({
+     el: '#latest_jobs_list',
+     data: {
+        todos: jobListingData
+    }
+ })
+</script>
+
+
+</body>
+</html>

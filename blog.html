@@ -84,68 +84,70 @@
       </nav>
     </div>
     <main class="mdl-layout__content">
-      <div id="latest_jobs_list">
-  
- 
-      
+
+
+        <style>
+           
+            .demo-card-wide > .mdl-card__title {
+              color: #fff;
+             
+              background: url('../assets/demos/welcome_card.jpg') center / cover;
+            }
+            .demo-card-wide > .mdl-card__menu {
+              color: #fff;
+            }
+            </style>
+            
+      <div >
         <!-- Wide card with share menu button -->
   
     <div class="mdl-grid">
-      <div v-for="x in todos" class="mdl-cell mdl-cell--4-col-desktop mdl-cell--7-col-tablet mdl-cell mdl-cell--12-col-phone">
-      
-        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-        
-          <div class="mdl-card__supporting-text">
-            <p>{{ x.data.jobTitle }}</p>
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" v-bind:href="'job_details.html?job_id='+ x.id">
-              Details
-            </a>
-          </div>
-        
+
+        <div class="mdl-cell--1-col-desktop">
+            <p></p>
         </div>
-       
-      </div>
+        <div class="mdl-cell--10-col-desktop">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col-desktop">
+                <div class="mdl-card__title" style="background: url('../website-images/victory-blog-banner.jpg') center / cover; height:400px;">
+                  <!-- <h2 class="mdl-card__title-text" style="color:#fff;">Daily Free Tests</h2> -->
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <p>Personality Development is an important part of professional life, Here we share the research based content which can make you a better professional. From professional email writing to the correct tone of the sentence to the lifestyle. We have got everything covered up here.</p>
+                    <p>Soft Skills are an important part in building the confidence to crack interviews as well in every aspect of life.</p>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get Started
+                  </a>
+                </div>
+                <!-- <div class="mdl-card__menu">
+                  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                  </button>
+                </div> -->
+              </div>
+        </div>
+
+        
+        <div class="mdl-cell--1-col-desktop">
+            <p>Ad space</p>
+        </div>
     </div>
+
+   
+
+   
+
+  
+
    </div>
 
    <div class="mdl-grid footer">
-    <p>Made with &hearts; for Uttar Pradesh Aspirants.</p>
-     <!-- <p>Made with &hearts; for Uttar Pradesh Aspirants. Copyright &#169; 2021</p> -->
+     <p>Copyright &#169; 2021</p>
    </div>
 
     </main>
   </div>
-
-
-<!-- <h1 id="hotDogOutput">Hot Dog Status: </h1>
-<input type="textfield" id="latestHotDogStatus" />
-<button id="saveButton">Save</button> -->
-
-<!-- <div class="header">
-  <ul class="header-nav"> -->
-    <!-- <li><a href="https://upjobalerts.com/">Home</a></li> -->
-    <!-- <li><a href="#">Admit Cards</a></li>
-    <li><a href="#">Results</a></li>
-    <li><a href="#">Resources</a></li>
-    <li><a href="#">Daily Tests</a></li>
-    <li><a href="#">Blog</a></li> -->
-  <!-- </ul>
-</div> -->
-
-
-
-
-<!-- <div class="footer">
-  <ul>
-    <li><a href="https://upjobalerts.com/">Home</a></li> -->
-    <!-- <li><a href="/">Resources</a></li>
-    <li><a href="/">Daily Tests</a></li> -->
-    <!-- <li><a href="login.html">Login</a></li>
-    <li><a href="add-job-posting.html">Add Job Posting</a></li> -->
-  <!-- </ul>
-</div> -->
 
 <script src="./app/app.js"></script>
 <script>
